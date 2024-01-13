@@ -1,3 +1,5 @@
+package passwords;
+
 public class PasswordEncryptorV2 implements PasswordEncryptor{
 
     private String key1;

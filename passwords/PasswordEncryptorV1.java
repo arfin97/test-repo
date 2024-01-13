@@ -1,3 +1,5 @@
+package passwords;
+
 public class PasswordEncryptorV1 implements PasswordEncryptor {
 
     @Override
