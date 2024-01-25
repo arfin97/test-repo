@@ -1,11 +1,22 @@
-class Solution {
+import java.util.Arrays;
 
+class Solution {
     public static void main(String[] args) {
-        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+        int[] nums = {4, 1, 2, 1, 2};
+        System.out.println(singleNumber(nums));
     }
-    public static boolean isPalindrome(String sy) {
-        sy = sy.replaceAll("[^a-zA-Z0-9]", "");
-        String reversed = new StringBuilder(sy.toLowerCase()).reverse().toString();
-        return sy.toLowerCase().equals(reversed);
+
+    public static int singleNumber(int[] nums) {
+        Arrays.sort(nums);
+        int temp = 0;
+        for(int i = 0; i < nums.length-1; i+=2) {
+            temp = nums[i] + nums[i+1];
+            temp = temp/2;
+            System.out.println(temp);
+            if(temp != nums[i+1]) {
+                return nums[i];
+            }
+        }
+        return -1;
     }
 }
